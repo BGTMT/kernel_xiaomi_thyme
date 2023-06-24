@@ -16,7 +16,7 @@
 #include <linux/proc_ns.h>
 
 #ifndef CONFIG_KALLSYMS
-#define version(a) Version_ ## a
+#define version(a) Version_##a
 #define version_string(a) version(a)
 
 extern int version_string(LINUX_VERSION_CODE);
@@ -43,15 +43,13 @@ EXPORT_SYMBOL_GPL(init_uts_ns);
 
 /* FIXED STRINGS! Don't touch! */
 const char linux_banner[] =
-	"Linux version " UTS_RELEASE " (" LINUX_COMPILE_BY "@"
-	LINUX_COMPILE_HOST ") (" LINUX_COMPILER ") " UTS_VERSION "\n";
+	"Linux version " UTS_RELEASE " (" LINUX_COMPILE_BY
+	"@" LINUX_COMPILE_HOST ") (" LINUX_COMPILER ") " UTS_VERSION "\n";
 
 const char *linux_banner_ptr = linux_banner;
 EXPORT_SYMBOL_GPL(linux_banner_ptr);
 
 const char linux_proc_banner[] =
-	"%s version %s"
-	" (" LINUX_COMPILE_BY "@" LINUX_COMPILE_HOST ")"
-	" (" LINUX_COMPILER ") %s\n";
+	"Linux version 4.19.157-perf-gf8cdf943b2b3 (builder@pangu-build-component-vendor-132704-n0m8w-v20t4-vskjx) (clang version 10.0.7 for Android NDK, GNU ld (binutils-2.27-bd24d23f) 2.27.0.20170315) #1 SMP PREEMPT Mon May 8 03:43:34 UTC 2023\n";
 
 BUILD_SALT;
